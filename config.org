@@ -234,8 +234,8 @@ Set some variables and keep my secrets secret.
   :config
   (setq org-roam-directory (file-truename "~/org-roam")
         org-roam-db-location (file-truename "~/org-roam/org-roam.db")
-        org-roam-capture-templates '(("d" "default" plain
-                                      :target (file+head "${slug}.org" "#+TITLE: ${title}\n")
+        org-roam-capture-templates '(("d" "default" plain "%?"
+                                      :if-new (file+head "${slug}.org" "#+TITLE: ${title}")
                                       :unnarrowed t))
         org-roam-extract-new-file-path "${slug}.org")
   (cl-defmethod org-roam-node-slug (node org-roam-node)
