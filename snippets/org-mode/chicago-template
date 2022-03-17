@@ -1,0 +1,23 @@
+# -*- mode: snippet -*-
+# name: chicago template
+# key: chicago
+# --
+#+author:
+#+date:
+#+options: toc:nil
+#+exclude_tags: noexport
+#+latex_class: chicago
+#+latex_header: \studentnum{}
+#+latex_header: \instructor{}
+#+latex_header: \course{}
+#+latex_header: \coursenum{}
+#+begin_src latex
+\makeatletter%%
+\newcommand\@mymakefnmark{\normalfont\@thefnmark.\hfill}
+\renewcommand\@makefntext[1]{%
+    \parindent 1em%
+    \noindent
+    \hb@xt@1.8em{\hss\@mymakefnmark}\RaggedRight#1}
+
+\makeatother
+#+end_src
