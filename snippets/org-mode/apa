@@ -2,11 +2,11 @@
 # name: apa-template
 # key: apa
 # --
-#+language: en
-#+exclude_tags: noexport
+#+author:
+#+date:
 #+options: toc:nil
+#+exclude_tags: noexport
 #+latex_class: apa
-#+latex_header: \addbibresource{}
 #+latex_header: \authorsaffiliations{}
 #+latex_header: \professor{}
 #+latex_header: \course{}
@@ -17,4 +17,6 @@
 ** Introduction :ignore:
 ** Conclusion :ignore
 * Bibliography
-[[printbibliography:]]
+#+bibliography: $1{~/org-roam/lib.bib}
+#+cite_export: biblatex
+#+print_bibliography:

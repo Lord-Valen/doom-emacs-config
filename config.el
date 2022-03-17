@@ -114,7 +114,6 @@
 \\usepackage[notes,backend=biber]{biblatex-chicago}
 \\usepackage[margin=1in]{geometry}
 \\doublespacing
-\\addbibresource{./lib.bib}
 \\makeatletter
 \\newcommand\\@mymakefnmark{\\normalfont\\@thefnmark.\\hfill}
 \\renewcommand\\@makefntext[1]{%
@@ -155,8 +154,7 @@
 [DEFAULT-PACKAGES]
 \\usepackage{newtxtext}
 \\usepackage{url}
-\\usepackage{doi}
-\\addbibresource{./lib.bib}"
+\\usepackage{doi}"
                                                 ("\\section{%s}" . "\\section*{%s}")
                                                 ("\\subsection{%s}" . "\\subsection*{%s}")
                                                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
@@ -228,15 +226,10 @@
                  (window-parameters . ((no-other-window . t)
                                        (no-delete-other-windows . t))))))
 
-(use-package! org-ref
-    :after org
-    :config
-    (setq org-ref-default-citation-link "autocite"
-          bibtex-completion-bibliography '("~/org-roam/lib.bib")
-          bibtex-dialect 'biblatex))
 (use-package! helm-bibtex
   :after org
   :config
+  ;; (setq bibtex-completion-bibliography '("~/org-roam/lib.bib"))
   (add-to-list 'org-capture-templates
                '(("a"                   ; key
                   "Article"             ; name

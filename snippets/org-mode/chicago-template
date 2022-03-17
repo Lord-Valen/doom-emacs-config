@@ -11,13 +11,12 @@
 #+latex_header: \instructor{}
 #+latex_header: \course{}
 #+latex_header: \coursenum{}
-#+begin_src latex
-\makeatletter%%
-\newcommand\@mymakefnmark{\normalfont\@thefnmark.\hfill}
-\renewcommand\@makefntext[1]{%
-    \parindent 1em%
-    \noindent
-    \hb@xt@1.8em{\hss\@mymakefnmark}\RaggedRight#1}
 
-\makeatother
-#+end_src
+* Notes :noexport:
+* Content :ignore:
+** Introduction :ignore:
+** Conclusion :ignore
+* Bibliography
+#+bibliography: $1{~/org-roam/lib.bib}
+#+cite_export: biblatex
+#+print_bibliography:

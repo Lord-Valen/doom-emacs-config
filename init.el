@@ -71,7 +71,7 @@
 
        :tools
        ;;ansible
-       ;;biblio            ; Writes a PhD for you (citation needed)
+       biblio            ; Writes a PhD for you (citation needed)
        ;;debugger          ; stepping through code, to help you add bugs
        ;;direnv
        (docker +lsp)
