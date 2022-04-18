@@ -3,7 +3,6 @@
 # key: apa
 # --
 #+author:
-#+date:
 #+options: toc:nil
 #+exclude_tags: noexport
 #+latex_class: apa
@@ -11,12 +10,11 @@
 #+latex_header: \professor{}
 #+latex_header: \course{}
 #+latex_header: \duedate{}
-
 * Notes :noexport:
 * Content :ignore:
 ** Introduction :ignore:
-** Conclusion :ignore
-* Bibliography
+** Conclusion :ignore:
+* Bibliography :ignore:
 #+bibliography: $1{~/org-roam/lib.bib}
 #+cite_export: biblatex
 #+print_bibliography:
