@@ -164,13 +164,16 @@ Set some variables and keep my secrets secret.
         org-export-with-section-numbers nil)
   (require 'ox-extra)
   (ox-extras-activate '(ignore-headlines))
-  (--map (add-to-list 'org-latex-classes it) '(("chicago" "\\documentclass[letterpaper,12pt]{article}
-[DEFAULT-PACKAGES]
+  (--map (add-to-list 'org-latex-classes it)
+         '(("chicago" "\\documentclass[letterpaper,12pt]{article}
+[PACKAGES]
 \\usepackage{newtxtext}
 \\usepackage{url}
 \\usepackage{doi}
 \\usepackage[notes,backend=biber]{biblatex-chicago}
 \\usepackage[margin=1in]{geometry}
+
+[EXTRA]
 \\doublespacing
 \\makeatletter
 \\newcommand\\@mymakefnmark{\\normalfont\\@thefnmark.\\hfill}
@@ -202,28 +205,68 @@ Set some variables and keep my secrets secret.
 \\end{center}
 \\end{titlepage}}
 \\makeatother"
-                                                ("\\section{%s}" . "\\section*{%s}")
-                                                ("\\subsection{%s}" . "\\subsection*{%s}")
-                                                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-                                                ("\\paragraph{%s}" . "\\paragraph*{%s}")
-                                                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
-                                                ("\\subsubparagraph{%s}" . "\\subsubparagraph*{%s}"))
-                                               ("apa" "\\documentclass[stu,biblatex,12pt]{apa7}
-[DEFAULT-PACKAGES]
+            ("\\section{%s}" . "\\section*{%s}")
+            ("\\subsection{%s}" . "\\subsection*{%s}")
+            ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+            ("\\paragraph{%s}" . "\\paragraph*{%s}")
+            ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
+            ("\\subsubparagraph{%s}" . "\\subsubparagraph*{%s}"))
+
+           ("apa" "\\documentclass[stu,biblatex,12pt]{apa7}
+[PACKAGES]
 \\usepackage{newtxtext}
 \\usepackage{url}
 \\usepackage{doi}"
-                                                ("\\section{%s}" . "\\section*{%s}")
-                                                ("\\subsection{%s}" . "\\subsection*{%s}")
-                                                ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-                                                ("\\paragraph{%s}" . "\\paragraph*{%s}")
-                                                ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
-                                                ("\\subsubparagraph{%s}" . "\\subsubparagraph*{%s}")))))
-(setq org-latex-hyperref-template nil) ;; stop org adding hypersetup{author..} to latex export
-;; (setq org-latex-prefer-user-labels t)
-;; deleted unwanted file extensions after latexMK
-(setq org-latex-logfiles-extensions
-      (quote ("lof" "lot" "tex~" "aux" "idx" "log" "out" "toc" "nav" "snm" "vrb" "dvi" "fdb_latexmk" "blg" "brf" "fls" "entoc" "ps" "spl" "bbl" "xmpi" "run.xml" "bcf" "acn" "acr" "alg" "glg" "gls" "ist")))
+            ("\\section{%s}" . "\\section*{%s}")
+            ("\\subsection{%s}" . "\\subsection*{%s}")
+            ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+            ("\\paragraph{%s}" . "\\paragraph*{%s}")
+            ("\\subparagraph{%s}" . "\\subparagraph*{%s}")
+            ("\\subsubparagraph{%s}" . "\\subsubparagraph*{%s}"))
+
+           '("altacv" "\\documentclass[10pt,letterpaper,ragged2e,withhyper]{altacv}
+[PACKAGES]
+\\usepackage{paracol}
+\\usepackage[rm]{roboto}
+\\usepackage[defaultsans]{lato}
+
+[EXTRA]
+% Page layout
+\\geometry{left=1.25cm,right=1.25cm,top=1.5cm,bottom=1cm,columnsep=0.5cm}
+
+% Use roboto and lato for fonts
+\\renewcommand{\\familydefault}{\\sfdefault}
+
+% Fonts
+\\renewcommand{\\namefont}{\\Huge\\rmfamily\\bfseries}
+\\renewcommand{\\personalinfofont}{\\footnotesize}
+\\renewcommand{\\cvsectionfont}{\\LARGE\\rmfamily\\bfseries}
+\\renewcommand{\\cvsubsectionfont}{\\large\\bfseries}
+
+% Colours
+\\definecolor{SlateGrey}{HTML}{2E2E2E}
+\\definecolor{LightGrey}{HTML}{666666}
+\\definecolor{DarkPastelRed}{HTML}{450808}
+\\definecolor{PastelRed}{HTML}{8F0D0D}
+\\definecolor{GoldenEarth}{HTML}{E7D192}
+
+\\colorlet{name}{black}
+\\colorlet{tagline}{PastelRed}
+\\colorlet{heading}{DarkPastelRed}
+\\colorlet{headingrule}{GoldenEarth}
+\\colorlet{subheading}{PastelRed}
+\\colorlet{accent}{PastelRed}
+\\colorlet{emphasis}{SlateGrey}
+\\colorlet{body}{LightGrey}
+
+% Change the bullets for itemize and rating marker for \\cvskill
+\\renewcommand{\\itemmarker}{{\\small\\textbullet}}
+\\renewcommand{\\ratingmarker}{\\faCircle}
+"
+
+             ("\\cvsection{%s}" . "\\cvsection{%s}")))))
+(setq org-latex-hyperref-template nil
+      org-latex-logfiles-extensions (quote ("lof" "lot" "tex~" "aux" "idx" "log" "out" "toc" "nav" "snm" "vrb" "dvi" "fdb_latexmk" "blg" "brf" "fls" "entoc" "ps" "spl" "bbl" "xmpi" "run.xml" "bcf" "acn" "acr" "alg" "glg" "gls" "ist")))
 #+end_src
 *** Org-Roam
 #+begin_src emacs-lisp :tangle yes
