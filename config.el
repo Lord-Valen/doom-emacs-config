@@ -42,6 +42,12 @@
   :config
   (global-evil-colemak-basics-mode))
 
+(use-package! elcord
+  :config
+  (add-to-list 'elcord-mode-icon-alist '(emacs-lisp-mode . "emacs_icon"))
+  (setq elcord-mode t
+        elcord-use-major-mode-as-main-icon t))
+
 (use-package! elfeed-org
  :config
  (setq rmh-elfeed-org-files (--map (substitute-env-in-file-name it) (list "$XDG_CONFIG_HOME/doom/elfeed.org"))
