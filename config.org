@@ -82,10 +82,11 @@ Set fonts and font sizes. Select Doom Theme.
 Because after all, why not?
 #+begin_src emacs-lisp
 (use-package! elcord
-  :config
+  :init
   (add-to-list 'elcord-mode-icon-alist '(emacs-lisp-mode . "emacs_icon"))
-  (setq elcord-mode t
-        elcord-use-major-mode-as-main-icon t))
+  (setq elcord-use-major-mode-as-main-icon t)
+  :config
+  (elcord-mode))
 #+end_src
 ** Elfeed
 #+begin_src emacs-lisp :tangle yes
