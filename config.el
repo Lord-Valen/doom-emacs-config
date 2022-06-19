@@ -43,10 +43,9 @@
   (global-evil-colemak-basics-mode))
 
 (use-package! elcord
-  :init
+  :config
   (add-to-list 'elcord-mode-icon-alist '(emacs-lisp-mode . "emacs_icon"))
   (setq elcord-use-major-mode-as-main-icon t)
-  :config
   (elcord-mode))
 
 (use-package! elfeed-org
