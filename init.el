@@ -17,7 +17,7 @@
 (when (daemonp)
   (exec-path-from-shell-initialize))
 (doom! :input
-       ;;(layout)
+       ;; (layout)
 
        :completion
        company
@@ -27,11 +27,11 @@
        doom
        doom-dashboard
        doom-quit
-       (emoji +unicode)    ; 🙂
-       hl-todo             ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
+       (emoji +unicode)       ; 🙂
+       hl-todo                ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        hydra
        indent-guides
-       (ligatures +extra)  ; ->>>>-
+       (ligatures +extra)     ; =>>>>=
        modeline
        nav-flash
        ophints
@@ -57,7 +57,7 @@
        :emacs
        dired
        electric
-       ;;ibuffer          ; interactive buffer management
+       ;; ibuffer          ; interactive buffer management
        undo
        vc
 
@@ -70,47 +70,43 @@
        grammar
 
        :tools
-       ;;ansible
-       biblio            ; Writes a PhD for you (citation needed)
-       ;;debugger          ; stepping through code, to help you add bugs
-       ;;direnv
+       ;; ansible
+       biblio  ; Writes a PhD for you (citation needed)
+       ;; debugger          ; stepping through code, to help you add bugs
+       ;; direnv
        (docker +lsp)
-       ;;editorconfig      ; let someone else argue about tabs vs spaces
+       editorconfig                ; let someone else argue about tabs vs spaces
        (eval +overlay)
        gist
        (lookup +dictionary)
        lsp
        (magit +forge)
-       ;;make              ; run make tasks from Emacs
-       ;;pass              ; password manager for nerds
+       ;; make              ; run make tasks from Emacs
+       ;; pass              ; password manager for nerds
        pdf
-       ;;prodigy           ; managing external services & code builders
+       ;; prodigy           ; managing external services & code builders
        rgb
-       ;;tmux              ; an API for interacting with tmux
+       ;; tmux              ; an API for interacting with tmux
 
        :os
        (:if IS-MAC macos)
-       tty               ; improve the terminal Emacs experience
+       tty                              ; improve the terminal Emacs experience
 
        :lang
-       (cc +lsp)
+       ;; (cc +lsp)
        common-lisp
-       ;;(csharp +lsp)
-       ;;data              ; config/data formats
+       ;; (csharp +lsp)
+       ;; data              ; config/data formats
        emacs-lisp
-       ;;(ess +lsp)        ; emacs speaks statistics
-       ;;(go +lsp)
-       (haskell +lsp)
+       ;; (ess +lsp)        ; emacs speaks statistics
+       (haskell +lsp)   ; >>=
        (json +lsp)
        (javascript +lsp)
        (latex +lsp)
-       ;;(lua +lsp)         ; one-based indices? one-based indices
-       ;;markdown
-       nix
+       ;; (lua +lsp)         ; one-based indices? one-based indices
+       ;; markdown
+       (nix +lsp)
        (org +roam2)
-       ;;(php +lsp)
-       (python +lsp)
-       ;;qt
        (rust +lsp)
        (sh +lsp)
        (yaml +lsp)
