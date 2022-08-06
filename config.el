@@ -95,8 +95,7 @@
 
 (use-package! projectile
   :config
-  (setq projectile-project-root-files-bottom-up (remove ".git" projectile-project-root-files-bottom-up)
-        projectile-project-search-path '(("~/dev" . 1))))
+  (setq projectile-project-search-path '(("~/dev" . 1))))
 
 (use-package! org
   :config
